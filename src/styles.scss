@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+// External
+@import "~bootstrap/scss/bootstrap";
+
+// App
+@import 'app/common/styles/common.module';
+@import 'app/feature/styles/feature.module';
+

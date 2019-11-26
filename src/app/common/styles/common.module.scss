@@ -1,0 +1,124 @@
+@import "~@angular/material/theming";
+@import "mixins";
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-teal, 400);
+$app-accent: mat-palette($mat-teal, 400);
+$app-warn: mat-palette($mat-red);
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: get-custom-color(bg-color);
+}
+
+h1, h2, h3, h4, h5, p, li, span, label, a, textarea, th, td, select, option {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  color: get-custom-color(text-color);
+}
+
+*:focus {
+  outline: none !important;
+  border: 0 !important;
+}
+
+// TOOLBAR
+.mat-toolbar {
+  z-index: 2;
+  box-shadow: 0 2px 13px 0 rgba(112, 112, 112, 0.5);
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+  .mat-icon, span {
+    color: get-custom-color(text-color);
+  }
+  ul{
+    list-style-type: none;
+    margin: unset;
+    li {
+      display: inline;
+      margin-right: 16px;
+      &:hover {
+        cursor: pointer;
+      }
+      span{
+        font-size: 14px;
+      }
+    }
+  }
+
+}
+
+// BUTTONS
+
+button:hover {
+  cursor: pointer;;
+}
+
+.no-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+// TABLE
+.mat-table {
+  width: 100%;
+  background-color: get-custom-color(table-color);
+  mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    color: get-custom-color(text-color);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+// CARD
+.mat-card {
+ background-color:  get-custom-color(card-color);
+  .mat-card-title {
+    color: get-custom-color(text-color);
+  }
+  .mat-card-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+// RADIO BUTTON
+.mat-radio-button {
+  margin-right: 24px;
+  .mat-radio-outer-circle{
+    border-color: #fff;
+  }
+  .mat-radio-label-content {
+    color: get-custom-color(text-color);
+  }
+}
+
+// PAGINATOR
+.mat-paginator {
+  background-color: get-custom-color(card-color);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+// SELECT
+.mat-select-arrow, .mat-select-value {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@import "mobile";
+
+
+
+
+
